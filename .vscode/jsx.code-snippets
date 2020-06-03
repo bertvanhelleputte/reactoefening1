@@ -1,0 +1,36 @@
+{
+  "Constructor for class": {
+    "scope": "typescriptreact",
+    "prefix": "constructor",
+    "body": ["constructor(props) {", "super(props)", "}"],
+    "description": "Standard constructor format"
+  },
+
+  "Styled JSX": {
+    "scope": "typescriptreact",
+    "prefix": "stylejsx",
+    "body": ["<style jsx>{`", "$1", "`}</style>"],
+    "description": "Standard constructor format"
+  },
+
+  "New TSX file": {
+    "scope": "typescriptreact",
+    "prefix": "inittsx",
+    "body": [
+      "import React, { Component } from 'react'",
+      " ",
+      "interface Props {}",
+      "interface State {}",
+      " ",
+      "export default class $1 extends Component<Props, State> {",
+      "constructor(props) {",
+      "super(props)",
+      "}",
+      " ",
+      "public render() {",
+      "return <></>",
+      "}}"
+    ],
+    "description": "Init new TSX file"
+  }
+}
