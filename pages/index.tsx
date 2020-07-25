@@ -7,7 +7,7 @@ interface Props {}
 interface State {
 	value: String
 	currentComponent: number
-	theme: number
+	theme: String
 }
 
 export default class extends Component<Props, State> {
@@ -16,18 +16,19 @@ export default class extends Component<Props, State> {
 		this.state = {
 			value: '',
 			currentComponent: 0,
-			theme: 0,
+			theme: 'classic',
 		}
 
 		this.handleChange = this.handleChange.bind(this)
 		this.handleClick = this.handleClick.bind(this)
 		this.handleTheme = this.handleTheme.bind(this)
-		
 	}
+
 	handleChange(event) {
 		this.setState({ value: event.target.value })
 		console.log(this.state.value)
 	}
+
 	handleClick() {
 		if (this.state.currentComponent === 0) {
 			this.setState({ currentComponent: 1 })
@@ -35,18 +36,21 @@ export default class extends Component<Props, State> {
 			this.setState({ currentComponent: 0 })
 		}
 	}
-	handleTheme(event){
-		this.setState({ theme: event.target.value})
-		console.log(this.state.value)
+
+	handleTheme(event) {
+		this.setState({ theme: event.target.value })
+		console.log(this.state.theme)
 	}
-	
 
 	public render() {
 		return (
 			<>
 				<Container>
 					{this.state.currentComponent === 0 ? (
-						<Input handleChange={this.handleChange} handleTheme={this.handleTheme} />
+						<Input
+							handleChange={this.handleChange}
+							handleTheme={this.handleTheme}
+						/>
 					) : (
 						<Preview content={this.state.value} />
 					)}

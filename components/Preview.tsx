@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 interface Props {
 	content: String
-	theme: number
+	theme: String
 }
 interface State {}
 
