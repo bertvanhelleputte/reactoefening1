@@ -50,6 +50,7 @@ export default class extends Component<Props, State> {
 						<Input
 							handleChange={this.handleChange}
 							handleTheme={this.handleTheme}
+							content={this.state.value}
 						/>
 					) : (
 						<Preview content={this.state.value} />

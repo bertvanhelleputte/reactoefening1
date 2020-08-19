@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 interface Props {
 	handleChange: Function
 	handleTheme: Function
+	content?: String
 }
 
 interface State {
@@ -29,7 +30,11 @@ export default class extends Component<Props, State> {
 		return (
 			<>
 				<h1>Message</h1>
-				<input type="text" onChange={this.props.handleChange} />
+				<input
+					value={this.props.content}
+					type="text"
+					onChange={this.props.handleChange}
+				/>
 				<p>Kies een thema:</p>
 				<div>
 					<label>
