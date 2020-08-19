@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 interface Props {
 	handleChange: Function
 	handleTheme: Function
-	content?: String
+	content?: string
 }
 
 interface State {
@@ -49,20 +49,20 @@ export default class extends Component<Props, State> {
 					<label>
 						<input
 							type="radio"
-							value="1"
+							value="green"
 							checked={this.state.checked === 1}
 							onChange={(event) => this.handleChecked(event, 1)}
 						/>
-						Optie2
+						Green
 					</label>
 					<label>
 						<input
 							type="radio"
-							value="2"
+							value="red"
 							checked={this.state.checked === 2}
 							onChange={(event) => this.handleChecked(event, 2)}
 						/>
-						Optie3
+						Red
 					</label>
 				</div>
 			</>

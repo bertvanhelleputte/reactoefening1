@@ -14,7 +14,7 @@ export default class extends Component<Props, State> {
 	constructor(props) {
 		super(props)
 		this.state = {
-			value: '',
+			value: 'test',
 			currentComponent: 0,
 			theme: 'classic',
 		}
@@ -39,7 +39,6 @@ export default class extends Component<Props, State> {
 
 	handleTheme(event) {
 		this.setState({ theme: event.target.value })
-		console.log(this.state.theme)
 	}
 
 	public render() {
@@ -53,7 +52,10 @@ export default class extends Component<Props, State> {
 							content={this.state.value}
 						/>
 					) : (
-						<Preview content={this.state.value} />
+						<Preview
+							content={this.state.value}
+							theme={this.state.theme}
+						/>
 					)}
 
 					<button onClick={this.handleClick}>Swap</button>

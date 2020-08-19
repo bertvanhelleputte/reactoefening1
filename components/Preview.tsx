@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 
 interface Props {
-	content: String
-	theme: String
+	content: string
+	theme: string
 }
 interface State {}
 
@@ -12,9 +12,26 @@ export default class extends Component<Props, State> {
 	}
 
 	public render() {
+		console.log(this.props.theme)
+
 		return (
 			<>
-				<h1>{this.props.content}</h1>
+				<div className={this.props.theme}>
+					<h1>{this.props.content}</h1>
+				</div>
+				<style jsx>{`
+					.classic {
+						background: grey;
+					}
+
+					.red {
+						background: red;
+					}
+
+					.green {
+						background: green;
+					}
+				`}</style>
 			</>
 		)
 	}
