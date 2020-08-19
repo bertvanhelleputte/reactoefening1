@@ -11,7 +11,6 @@ export default class extends Component<Props, State> {
 	public render() {
 		return (
 			<>
-				<div>Container</div>
 				<div className="container">{this.props.children}</div>
 			</>
 		)
