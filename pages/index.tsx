@@ -5,9 +5,9 @@ import Preview from 'components/Preview'
 
 interface Props {}
 interface State {
-	value: String
+	value: string
 	currentComponent: number
-	theme: number
+	theme: string
 }
 
 export default class extends Component<Props, State> {
@@ -16,7 +16,7 @@ export default class extends Component<Props, State> {
 		this.state = {
 			value: '',
 			currentComponent: 0,
-			theme: 0,
+			theme: '',
 		}
 
 		this.handleChange = this.handleChange.bind(this)
@@ -26,6 +26,7 @@ export default class extends Component<Props, State> {
 	}
 	handleChange(event) {
 		this.setState({ value: event.target.value })
+
 		console.log(this.state.value)
 	}
 	handleClick() {
@@ -37,7 +38,8 @@ export default class extends Component<Props, State> {
 	}
 	handleTheme(event){
 		this.setState({ theme: event.target.value})
-		console.log(this.state.value)
+
+		console.log(this.state.theme)
 	}
 	
 
@@ -46,12 +48,16 @@ export default class extends Component<Props, State> {
 			<>
 				<Container>
 					{this.state.currentComponent === 0 ? (
-						<Input handleChange={this.handleChange} handleTheme={this.handleTheme} />
+						<>
+							<Input handleChange={this.handleChange} handleTheme={this.handleTheme} />
+							<button onClick={this.handleClick}>Swap</button>
+						</>
 					) : (
-						<Preview content={this.state.value} />
+						
+						<Preview content={this.state.value} theme={this.state.theme} handleClick={this.handleClick}/>
 					)}
 
-					<button onClick={this.handleClick}>Swap</button>
+				
 				</Container>
 			</>
 		)

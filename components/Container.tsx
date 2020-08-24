@@ -11,8 +11,9 @@ export default class extends Component<Props, State> {
 	public render() {
 		return (
 			<>
-				<div>Container</div>
-				<div className="container">{this.props.children}</div>
+
+				<div className="container-fluid d-flex flex-column align-items-center">{this.props.children}</div>
+				
 			</>
 		)
 	}
