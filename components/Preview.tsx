@@ -23,10 +23,18 @@ export default class extends Component<Props, State> {
 						color: red;
 					}
 					.groen {
-						background: black;
-						color: white;
+						background: white;
+  animation: epeleptic .2s infinite alternate linear;
+}
+@keyframes epeleptic {
+  0%   {
+    background: white;
+  }
+  100% {
+    background: black;
 					}
 					.groen > h1 {
+						color: white;
 						font-size: 8em;
 					}
 					.rood {
