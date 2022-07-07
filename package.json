@@ -23,7 +23,7 @@
 				"babel-plugin-react-svg": "^3.0.3",
 				"gsap": "^3.0.5",
 				"matter-js": "^0.14.2",
-				"moment": "^2.24.0",
+				"moment": "^2.29.4",
 				"next": "^8.1.0",
 				"next-compose-plugins": "^2.2.0",
 				"next-react-svg": "^1.1.0",
